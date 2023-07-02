@@ -24,6 +24,6 @@ spec:
       port: 80
       targetPort: 80
   selector: 
-    name: nginx
-    version: "1.10"
-  type: LoadBalancer
+    app: nginx
+    version: "1.24"
+  type: NodePort

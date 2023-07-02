@@ -34,6 +34,6 @@ while [[ "$READY" != "True" ]]; do
 done
 
 # Update the service selector with the new version
-kubectl patch svc $SERVICE -p "{\"spec\":{\"selector\": {\"name\": \"${SERVICE}\", \"version\": \"${VERSION}\"}}}"
+kubectl patch svc $SERVICE -p "{\"spec\":{\"selector\": {\"app\": \"${SERVICE}\", \"version\": \"${VERSION}\"}}}"
 
 echo "Done."

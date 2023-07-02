@@ -188,3 +188,13 @@ kubectl patch svc $SERVICE -p "{\"spec\":{\"selector\": {\"name\": \"${SERVICE}\
 
 echo "Done."
 ```
+
+
+### Hands On
+* Deploy blue deployment
+* Deploy service point to blue deployment
+* bg-deploy.sh to deploy green deployment and switch to green version
+  - `./bin/bg-deploy.sh nginx 1.25 ./kubernetes/green-deploy.yaml`
+* testing `while true; do curl -s http://nginx/version | grep nginx; sleep 0.5; done`
+* bg-deploy.sh to deploy blue deployment and switch to blue version
+  - `./bin/bg-deploy.sh nginx 1.24 ./kubernetes/blue-deploy.yaml`
